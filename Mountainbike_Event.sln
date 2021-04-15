@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mountainbike_Event", "Mountainbike_Event\Mountainbike_Event.csproj", "{62B5FEFA-0130-4DAA-AD31-2E8552B374A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.DatabaseConnection", "Service.DatabaseConnection\Service.DatabaseConnection.csproj", "{918E61EB-F473-47D4-82A4-8B9535174B15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62B5FEFA-0130-4DAA-AD31-2E8552B374A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B5FEFA-0130-4DAA-AD31-2E8552B374A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B5FEFA-0130-4DAA-AD31-2E8552B374A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B5FEFA-0130-4DAA-AD31-2E8552B374A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918E61EB-F473-47D4-82A4-8B9535174B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918E61EB-F473-47D4-82A4-8B9535174B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918E61EB-F473-47D4-82A4-8B9535174B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918E61EB-F473-47D4-82A4-8B9535174B15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7F117DC-658D-4ADC-9C8C-F32FAD23A905}
+	EndGlobalSection
+EndGlobal

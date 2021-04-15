@@ -1,0 +1,12 @@
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\bin\Debug\Service.DatabaseConnection.dll
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\bin\Debug\Service.DatabaseConnection.pdb
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.csprojAssemblyReference.cache
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.csproj.CoreCompileInputs.cache
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.dll
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.pdb
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\bin\Debug\Service.DatabaseConnection.dll
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\bin\Debug\Service.DatabaseConnection.pdb
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.csprojAssemblyReference.cache
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.csproj.CoreCompileInputs.cache
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.dll
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Service.DatabaseConnection\obj\Debug\Service.DatabaseConnection.pdb
