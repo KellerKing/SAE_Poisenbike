@@ -9,8 +9,8 @@ namespace Service.DatabaseConnection.Models
   public class WettkampfModel
   {
     public int? WettkampfID { get; set; }
-    public TimeSpan Datum { get; set; }
+    public DateTime Datum { get; set; }
     public string Name { get; set; }
-    public int StreckenID { get; set; }
+    public int? StreckenID { get; set; }
   }
 }

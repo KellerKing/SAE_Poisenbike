@@ -112,7 +112,7 @@ namespace Mountainbike_Event
 
     private void createTeam()
     {
-      var team = Factory.CreateTeamModel(E_MailTextBox.Text, HausnummerTextBox.Text, materialTextBoxOrt.Text, PLZTextBoxTeam.Text, materialTextBoxStr.Text, null, materialTextBoxTeamname.Text);
+      var team = ModelFactory.CreateTeamModel(E_MailTextBox.Text, HausnummerTextBox.Text, materialTextBoxOrt.Text, PLZTextBoxTeam.Text, materialTextBoxStr.Text, null, materialTextBoxTeamname.Text);
       var pruefergebnisse = PruefFactory.GetPruefergebnisTeam(team, new DatabaseConnector());
       
       if(pruefergebnisse.Any(x=> x.IsValid == false))

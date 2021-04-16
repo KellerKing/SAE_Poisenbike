@@ -16,6 +16,6 @@ namespace Service.DatabaseConnection.Models
     public string Strasse { get; set; }
     public string Ort { get; set; }
     public DateTime GebDat { get; set; }
-    public int TeamID { get; set; }
+    public int? TeamID { get; set; }
   }
 }
