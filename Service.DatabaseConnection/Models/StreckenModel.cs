@@ -12,5 +12,6 @@ namespace Service.DatabaseConnection.Models
     public float Distanz_KM { get; set; }
     public int Höhenmeter { get; set; }
     public decimal Startgeld { get; set; }
+    public string Name { get; set; }
   }
 }

@@ -51,14 +51,15 @@ namespace Mountainbike_Event
       };
     }
 
-    public static StreckenModel CreateStreckenModel(float dist = 0, int? sId = null, int hm = 0, Decimal money = 0)
+    public static StreckenModel CreateStreckenModel(float dist = 0, int? sId = null, int hm = 0, Decimal money = 0, string n = "")
     {
       return new StreckenModel
       {
         Distanz_KM = dist,
         StreckenID = sId,
         Höhenmeter = hm,
-        Startgeld = money
+        Startgeld = money,
+        Name = n
 
       };
     }
