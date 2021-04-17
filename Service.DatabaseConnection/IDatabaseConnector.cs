@@ -17,11 +17,11 @@ namespace Service.DatabaseConnection
 
     Task<List<FahrerModel>> GetFahrerImTeam(TeamModel team); //Doch lieber mit linq in der Logik ?
 
-    Task<List<StreckenModel>> ZeigeAlleStreckenAsync();
+    List<StreckenModel> ZeigeAlleStrecken();
     Task<int> CreateStrecke(StreckenModel strecke);
 
-    Task<List<WettkampfModel>> ZeigeAlleWettkaempfeAsync();
-    Task<int> CreateWettkampfAsync(WettkampfModel wettkampf);
+    List<WettkampfModel> ZeigeAlleWettkaempfe();
+    int CreateWettkampf(WettkampfModel wettkampf);
 
 
     Task<int> InsertErreichteZeit(BestenlisteModel bestenliste);

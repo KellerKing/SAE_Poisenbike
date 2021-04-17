@@ -77,12 +77,13 @@ namespace Super_duper_ding.DataAcces
       throw new System.NotImplementedException();
     }
 
-    public async Task<List<StreckenModel>> ZeigeAlleStreckenAsync()
+    public List<StreckenModel> ZeigeAlleStrecken()
     {
       var procedure = Commands.procedures[(int)CommandNames.getStrecken];
       using (var clone = (MySqlConnection)_connection.Clone())
       {
-        return (List<StreckenModel>)await clone.QueryAsync<StreckenModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        clone.Open();
+        return (List<StreckenModel>) clone.Query<StreckenModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
 
     }
@@ -98,20 +99,20 @@ namespace Super_duper_ding.DataAcces
       }
     }
 
-    public async Task<List<WettkampfModel>> ZeigeAlleWettkaempfeAsync()
+    public List<WettkampfModel> ZeigeAlleWettkaempfe()
     {
       var procedure = Commands.procedures[(int)CommandNames.getWettkaempfe];
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
-        return (List<WettkampfModel>)await clone.QueryAsync<WettkampfModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        return (List<WettkampfModel>) clone.Query<WettkampfModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
     }
 
-    public async Task<int> CreateWettkampfAsync(WettkampfModel wettkampf)
+    public int CreateWettkampf(WettkampfModel wettkampf)
     {
 
-      var procedure = Commands.procedures[(int)CommandNames.getWettkaempfe];
+      var procedure = Commands.procedures[(int)CommandNames.insertWettkampf];
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
