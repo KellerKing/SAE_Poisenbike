@@ -12,7 +12,7 @@ namespace Super_duper_ding.Pruefungen
   {
       public static Pruefergebnis CheckIfWettkampfAlreadyExists(WettkampfModel wettkampf, IDatabaseConnector cnn)
       {
-        var isValid = cnn.ZeigeAlleWettkaempfeAsync().Result.Where(x => x.Name == wettkampf.Name).FirstOrDefault() == null;
+        var isValid = cnn.ZeigeAlleWettkaempfe().Where(x => x.Name == wettkampf.Name).FirstOrDefault() == null;
 
         return new Pruefergebnis
         {
@@ -25,7 +25,7 @@ namespace Super_duper_ding.Pruefungen
 
     public static Pruefergebnis CheckIfSelectedStreckeExists(WettkampfModel wettkampf, IDatabaseConnector cnn)
     {
-      var isValid = cnn.ZeigeAlleStreckenAsync().Result.Where(x => x.StreckenID == wettkampf.StreckenID).FirstOrDefault() != null;
+      var isValid = cnn.ZeigeAlleStrecken().Where(x => x.StreckenID == wettkampf.StreckenID).FirstOrDefault() != null;
 
       return new Pruefergebnis
       {

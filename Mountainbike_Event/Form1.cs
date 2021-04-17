@@ -34,8 +34,13 @@ namespace Mountainbike_Event
       materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey800, Primary.BlueGrey600, Accent.LightBlue100, TextShade.WHITE);
 
 
+      InitComboboxen();
     }
 
+    private void InitComboboxen()
+    {
+      mCbStrecke = ViewModelCreator.CreateStreckenCbItems(new DatabaseConnector(), mCbStrecke);
+    }
 
 
     private bool pflichtfeldvalidierung(Control Controlcard)
@@ -46,7 +51,7 @@ namespace Mountainbike_Event
 
         MaterialTextBox t = control as MaterialTextBox;
 
-        if (t.Text == String.Empty)
+        if (t?.Text == String.Empty)
         {
           MessageBox.Show("Bitte füllen sie alle Felder aus! :)");
           return false;
@@ -125,7 +130,35 @@ namespace Mountainbike_Event
 
     }
 
+    public void createStrecke()
+    {
+      var geld = Convert.ToDecimal(StartgeldTextBox.Text);
+      var hm = Convert.ToInt32(mTbHoehe.Text);
+      var distanz = (float)Convert.ToDouble(mtbDistanz.Text);
+      var name = mTBStreckeName.Text;
 
+      var strecke = ModelFactory.CreateStreckenModel( dist: distanz, hm: hm, money: geld, n: name);
+
+      Buisnesslogic.CreateStrecke(strecke, new DatabaseConnector());
+
+    }
+
+    public void createWettkampf()
+    {
+      var name = mTBWettkmapfName.Text;
+      var time = dTPWettkampfDate.Value;
+      var streckenID = (int)mCbStrecke.SelectedValue;
+      var wettkmapf = ModelFactory.CreateWettkampfModel(time, name, streckenID, null);
+
+      var pruefergebnisse = PruefFactory.GetPruefergebnisWettkampf(wettkmapf, new DatabaseConnector());
+
+      if (pruefergebnisse.Any(x => x.IsValid == false))
+      {
+        MessageBox.Show(pruefergebnisse.Where(x => x.IsValid == false).FirstOrDefault().Fehlertext);
+        return;
+      }
+      Buisnesslogic.CreateWettkampf(wettkmapf, new DatabaseConnector());
+    }
 
 
     private void EintragPflegenBtn_Click(object sender, EventArgs e)
@@ -143,11 +176,17 @@ namespace Mountainbike_Event
           
           break;
         case "WettkampfTab":
-          pflichtfeldvalidierung(controlCardTextBoxWettkampf);
+          if (pflichtfeldvalidierung(controlCardTextBoxWettkampf))
+          {
+            createWettkampf();
+          }
           break;
         case "StreckeTab":
-          pflichtfeldvalidierung(controlCardTextBoxStrecke);
-          eingabeValidierungStrecke();
+          
+          if(eingabeValidierungStrecke() && pflichtfeldvalidierung(controlCardTextBoxStrecke))
+          {
+            createStrecke();
+          }
           break;
         case "FahrerTab":
           pflichtfeldvalidierung(controlCardTextBoxFahrer);

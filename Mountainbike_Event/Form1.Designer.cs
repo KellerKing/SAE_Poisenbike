@@ -51,20 +51,20 @@ namespace Mountainbike_Event
       this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
       this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
       this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
-      this.materialTextBox9 = new MaterialSkin.Controls.MaterialTextBox();
+      this.mTBWettkmapfName = new MaterialSkin.Controls.MaterialTextBox();
       this.controlCardTextBoxWettkampf = new MaterialSkin.Controls.MaterialCard();
-      this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-      this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
+      this.dTPWettkampfDate = new System.Windows.Forms.DateTimePicker();
+      this.mCbStrecke = new MaterialSkin.Controls.MaterialComboBox();
       this.StreckeTab = new System.Windows.Forms.TabPage();
       this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
       this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
       this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
       this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
       this.controlCardTextBoxStrecke = new MaterialSkin.Controls.MaterialCard();
-      this.materialTextBox11 = new MaterialSkin.Controls.MaterialTextBox();
-      this.materialTextBox12 = new MaterialSkin.Controls.MaterialTextBox();
+      this.mtbDistanz = new MaterialSkin.Controls.MaterialTextBox();
+      this.mTbHoehe = new MaterialSkin.Controls.MaterialTextBox();
       this.StartgeldTextBox = new MaterialSkin.Controls.MaterialTextBox();
-      this.materialTextBox14 = new MaterialSkin.Controls.MaterialTextBox();
+      this.mTBStreckeName = new MaterialSkin.Controls.MaterialTextBox();
       this.FahrerTab = new System.Windows.Forms.TabPage();
       this.controlCardTextBoxFahrer = new MaterialSkin.Controls.MaterialCard();
       this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -127,7 +127,7 @@ namespace Mountainbike_Event
       this.materialTabSelector1.Depth = 0;
       this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
       this.materialTabSelector1.Location = new System.Drawing.Point(-12, 11);
-      this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(4);
       this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialTabSelector1.Name = "materialTabSelector1";
       this.materialTabSelector1.Size = new System.Drawing.Size(984, 59);
@@ -142,7 +142,7 @@ namespace Mountainbike_Event
       this.materialTabControl1.Controls.Add(this.FahrerTab);
       this.materialTabControl1.Depth = 0;
       this.materialTabControl1.Location = new System.Drawing.Point(35, 78);
-      this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4);
       this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialTabControl1.Multiline = true;
       this.materialTabControl1.Name = "materialTabControl1";
@@ -161,9 +161,9 @@ namespace Mountainbike_Event
       this.TeamTab.Controls.Add(this.materialTextBoxTeamname);
       this.TeamTab.Controls.Add(this.controlCardTextBoxTeam);
       this.TeamTab.Location = new System.Drawing.Point(4, 25);
-      this.TeamTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.TeamTab.Margin = new System.Windows.Forms.Padding(4);
       this.TeamTab.Name = "TeamTab";
-      this.TeamTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.TeamTab.Padding = new System.Windows.Forms.Padding(4);
       this.TeamTab.Size = new System.Drawing.Size(619, 577);
       this.TeamTab.TabIndex = 0;
       this.TeamTab.Text = "Team";
@@ -253,7 +253,7 @@ namespace Mountainbike_Event
       this.materialTextBoxTeamname.Depth = 0;
       this.materialTextBoxTeamname.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBoxTeamname.Location = new System.Drawing.Point(319, 33);
-      this.materialTextBoxTeamname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBoxTeamname.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBoxTeamname.MaxLength = 50;
       this.materialTextBoxTeamname.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBoxTeamname.Multiline = false;
@@ -286,7 +286,7 @@ namespace Mountainbike_Event
       this.HausnummerTextBox.Depth = 0;
       this.HausnummerTextBox.Font = new System.Drawing.Font("Roboto", 12F);
       this.HausnummerTextBox.Location = new System.Drawing.Point(47, 386);
-      this.HausnummerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.HausnummerTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.HausnummerTextBox.MaxLength = 50;
       this.HausnummerTextBox.MouseState = MaterialSkin.MouseState.OUT;
       this.HausnummerTextBox.Multiline = false;
@@ -301,7 +301,7 @@ namespace Mountainbike_Event
       this.materialTextBoxStr.Depth = 0;
       this.materialTextBoxStr.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBoxStr.Location = new System.Drawing.Point(49, 306);
-      this.materialTextBoxStr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBoxStr.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBoxStr.MaxLength = 50;
       this.materialTextBoxStr.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBoxStr.Multiline = false;
@@ -316,7 +316,7 @@ namespace Mountainbike_Event
       this.materialTextBoxOrt.Depth = 0;
       this.materialTextBoxOrt.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBoxOrt.Location = new System.Drawing.Point(51, 226);
-      this.materialTextBoxOrt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBoxOrt.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBoxOrt.MaxLength = 50;
       this.materialTextBoxOrt.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBoxOrt.Multiline = false;
@@ -331,7 +331,7 @@ namespace Mountainbike_Event
       this.PLZTextBoxTeam.Depth = 0;
       this.PLZTextBoxTeam.Font = new System.Drawing.Font("Roboto", 12F);
       this.PLZTextBoxTeam.Location = new System.Drawing.Point(51, 156);
-      this.PLZTextBoxTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.PLZTextBoxTeam.Margin = new System.Windows.Forms.Padding(4);
       this.PLZTextBoxTeam.MaxLength = 50;
       this.PLZTextBoxTeam.MouseState = MaterialSkin.MouseState.OUT;
       this.PLZTextBoxTeam.Multiline = false;
@@ -346,7 +346,7 @@ namespace Mountainbike_Event
       this.E_MailTextBox.Depth = 0;
       this.E_MailTextBox.Font = new System.Drawing.Font("Roboto", 12F);
       this.E_MailTextBox.Location = new System.Drawing.Point(51, 92);
-      this.E_MailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.E_MailTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.E_MailTextBox.MaxLength = 50;
       this.E_MailTextBox.MouseState = MaterialSkin.MouseState.OUT;
       this.E_MailTextBox.Multiline = false;
@@ -360,12 +360,11 @@ namespace Mountainbike_Event
       this.WettkampfTab.Controls.Add(this.materialLabel18);
       this.WettkampfTab.Controls.Add(this.materialLabel19);
       this.WettkampfTab.Controls.Add(this.materialLabel20);
-      this.WettkampfTab.Controls.Add(this.materialTextBox9);
       this.WettkampfTab.Controls.Add(this.controlCardTextBoxWettkampf);
       this.WettkampfTab.Location = new System.Drawing.Point(4, 25);
-      this.WettkampfTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.WettkampfTab.Margin = new System.Windows.Forms.Padding(4);
       this.WettkampfTab.Name = "WettkampfTab";
-      this.WettkampfTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.WettkampfTab.Padding = new System.Windows.Forms.Padding(4);
       this.WettkampfTab.Size = new System.Drawing.Size(619, 577);
       this.WettkampfTab.TabIndex = 1;
       this.WettkampfTab.Text = "Wettkampf";
@@ -402,7 +401,7 @@ namespace Mountainbike_Event
       this.materialLabel20.AutoSize = true;
       this.materialLabel20.Depth = 0;
       this.materialLabel20.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel20.Location = new System.Drawing.Point(73, 38);
+      this.materialLabel20.Location = new System.Drawing.Point(73, 44);
       this.materialLabel20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel20.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel20.Name = "materialLabel20";
@@ -410,66 +409,67 @@ namespace Mountainbike_Event
       this.materialLabel20.TabIndex = 1;
       this.materialLabel20.Text = "Wettkapmfname";
       // 
-      // materialTextBox9
+      // mTBWettkmapfName
       // 
-      this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.materialTextBox9.Depth = 0;
-      this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 12F);
-      this.materialTextBox9.Location = new System.Drawing.Point(387, 36);
-      this.materialTextBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.materialTextBox9.MaxLength = 50;
-      this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
-      this.materialTextBox9.Multiline = false;
-      this.materialTextBox9.Name = "materialTextBox9";
-      this.materialTextBox9.Size = new System.Drawing.Size(133, 50);
-      this.materialTextBox9.TabIndex = 0;
-      this.materialTextBox9.Text = "";
+      this.mTBWettkmapfName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mTBWettkmapfName.Depth = 0;
+      this.mTBWettkmapfName.Font = new System.Drawing.Font("Roboto", 12F);
+      this.mTBWettkmapfName.Location = new System.Drawing.Point(23, 13);
+      this.mTBWettkmapfName.Margin = new System.Windows.Forms.Padding(4);
+      this.mTBWettkmapfName.MaxLength = 50;
+      this.mTBWettkmapfName.MouseState = MaterialSkin.MouseState.OUT;
+      this.mTBWettkmapfName.Multiline = false;
+      this.mTBWettkmapfName.Name = "mTBWettkmapfName";
+      this.mTBWettkmapfName.Size = new System.Drawing.Size(304, 50);
+      this.mTBWettkmapfName.TabIndex = 0;
+      this.mTBWettkmapfName.Text = "";
       // 
       // controlCardTextBoxWettkampf
       // 
       this.controlCardTextBoxWettkampf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.controlCardTextBoxWettkampf.Controls.Add(this.dateTimePicker1);
-      this.controlCardTextBoxWettkampf.Controls.Add(this.materialComboBox2);
+      this.controlCardTextBoxWettkampf.Controls.Add(this.dTPWettkampfDate);
+      this.controlCardTextBoxWettkampf.Controls.Add(this.mCbStrecke);
+      this.controlCardTextBoxWettkampf.Controls.Add(this.mTBWettkmapfName);
       this.controlCardTextBoxWettkampf.Depth = 0;
       this.controlCardTextBoxWettkampf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.controlCardTextBoxWettkampf.Location = new System.Drawing.Point(313, 25);
+      this.controlCardTextBoxWettkampf.Location = new System.Drawing.Point(244, 25);
       this.controlCardTextBoxWettkampf.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
       this.controlCardTextBoxWettkampf.MouseState = MaterialSkin.MouseState.HOVER;
       this.controlCardTextBoxWettkampf.Name = "controlCardTextBoxWettkampf";
       this.controlCardTextBoxWettkampf.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-      this.controlCardTextBoxWettkampf.Size = new System.Drawing.Size(281, 265);
+      this.controlCardTextBoxWettkampf.Size = new System.Drawing.Size(350, 265);
       this.controlCardTextBoxWettkampf.TabIndex = 9;
       // 
-      // dateTimePicker1
+      // dTPWettkampfDate
       // 
-      this.dateTimePicker1.Location = new System.Drawing.Point(23, 106);
-      this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.dateTimePicker1.Name = "dateTimePicker1";
-      this.dateTimePicker1.Size = new System.Drawing.Size(235, 22);
-      this.dateTimePicker1.TabIndex = 9;
+      this.dTPWettkampfDate.Location = new System.Drawing.Point(23, 106);
+      this.dTPWettkampfDate.Margin = new System.Windows.Forms.Padding(4);
+      this.dTPWettkampfDate.Name = "dTPWettkampfDate";
+      this.dTPWettkampfDate.Size = new System.Drawing.Size(304, 22);
+      this.dTPWettkampfDate.TabIndex = 9;
       // 
-      // materialComboBox2
+      // mCbStrecke
       // 
-      this.materialComboBox2.AutoResize = false;
-      this.materialComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.materialComboBox2.Depth = 0;
-      this.materialComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-      this.materialComboBox2.DropDownHeight = 174;
-      this.materialComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.materialComboBox2.DropDownWidth = 121;
-      this.materialComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-      this.materialComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.materialComboBox2.FormattingEnabled = true;
-      this.materialComboBox2.IntegralHeight = false;
-      this.materialComboBox2.ItemHeight = 43;
-      this.materialComboBox2.Location = new System.Drawing.Point(73, 174);
-      this.materialComboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.materialComboBox2.MaxDropDownItems = 4;
-      this.materialComboBox2.MouseState = MaterialSkin.MouseState.OUT;
-      this.materialComboBox2.Name = "materialComboBox2";
-      this.materialComboBox2.Size = new System.Drawing.Size(160, 49);
-      this.materialComboBox2.StartIndex = 0;
-      this.materialComboBox2.TabIndex = 8;
+      this.mCbStrecke.AutoResize = false;
+      this.mCbStrecke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.mCbStrecke.Depth = 0;
+      this.mCbStrecke.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+      this.mCbStrecke.DropDownHeight = 174;
+      this.mCbStrecke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.mCbStrecke.DropDownWidth = 121;
+      this.mCbStrecke.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+      this.mCbStrecke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.mCbStrecke.FormattingEnabled = true;
+      this.mCbStrecke.IntegralHeight = false;
+      this.mCbStrecke.ItemHeight = 43;
+      this.mCbStrecke.Location = new System.Drawing.Point(23, 174);
+      this.mCbStrecke.Margin = new System.Windows.Forms.Padding(4);
+      this.mCbStrecke.MaxDropDownItems = 4;
+      this.mCbStrecke.MouseState = MaterialSkin.MouseState.OUT;
+      this.mCbStrecke.Name = "mCbStrecke";
+      this.mCbStrecke.Size = new System.Drawing.Size(304, 49);
+      this.mCbStrecke.StartIndex = 0;
+      this.mCbStrecke.TabIndex = 8;
       // 
       // StreckeTab
       // 
@@ -479,9 +479,9 @@ namespace Mountainbike_Event
       this.StreckeTab.Controls.Add(this.materialLabel24);
       this.StreckeTab.Controls.Add(this.controlCardTextBoxStrecke);
       this.StreckeTab.Location = new System.Drawing.Point(4, 25);
-      this.StreckeTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.StreckeTab.Margin = new System.Windows.Forms.Padding(4);
       this.StreckeTab.Name = "StreckeTab";
-      this.StreckeTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.StreckeTab.Padding = new System.Windows.Forms.Padding(4);
       this.StreckeTab.Size = new System.Drawing.Size(619, 577);
       this.StreckeTab.TabIndex = 2;
       this.StreckeTab.Text = "Strecke";
@@ -542,10 +542,10 @@ namespace Mountainbike_Event
       // controlCardTextBoxStrecke
       // 
       this.controlCardTextBoxStrecke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.controlCardTextBoxStrecke.Controls.Add(this.materialTextBox11);
-      this.controlCardTextBoxStrecke.Controls.Add(this.materialTextBox12);
+      this.controlCardTextBoxStrecke.Controls.Add(this.mtbDistanz);
+      this.controlCardTextBoxStrecke.Controls.Add(this.mTbHoehe);
       this.controlCardTextBoxStrecke.Controls.Add(this.StartgeldTextBox);
-      this.controlCardTextBoxStrecke.Controls.Add(this.materialTextBox14);
+      this.controlCardTextBoxStrecke.Controls.Add(this.mTBStreckeName);
       this.controlCardTextBoxStrecke.Depth = 0;
       this.controlCardTextBoxStrecke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
       this.controlCardTextBoxStrecke.Location = new System.Drawing.Point(304, 31);
@@ -556,35 +556,35 @@ namespace Mountainbike_Event
       this.controlCardTextBoxStrecke.Size = new System.Drawing.Size(297, 314);
       this.controlCardTextBoxStrecke.TabIndex = 8;
       // 
-      // materialTextBox11
+      // mtbDistanz
       // 
-      this.materialTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.materialTextBox11.Depth = 0;
-      this.materialTextBox11.Font = new System.Drawing.Font("Roboto", 12F);
-      this.materialTextBox11.Location = new System.Drawing.Point(32, 228);
-      this.materialTextBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.materialTextBox11.MaxLength = 50;
-      this.materialTextBox11.MouseState = MaterialSkin.MouseState.OUT;
-      this.materialTextBox11.Multiline = false;
-      this.materialTextBox11.Name = "materialTextBox11";
-      this.materialTextBox11.Size = new System.Drawing.Size(252, 50);
-      this.materialTextBox11.TabIndex = 7;
-      this.materialTextBox11.Text = "";
+      this.mtbDistanz.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mtbDistanz.Depth = 0;
+      this.mtbDistanz.Font = new System.Drawing.Font("Roboto", 12F);
+      this.mtbDistanz.Location = new System.Drawing.Point(32, 228);
+      this.mtbDistanz.Margin = new System.Windows.Forms.Padding(4);
+      this.mtbDistanz.MaxLength = 50;
+      this.mtbDistanz.MouseState = MaterialSkin.MouseState.OUT;
+      this.mtbDistanz.Multiline = false;
+      this.mtbDistanz.Name = "mtbDistanz";
+      this.mtbDistanz.Size = new System.Drawing.Size(252, 50);
+      this.mtbDistanz.TabIndex = 7;
+      this.mtbDistanz.Text = "";
       // 
-      // materialTextBox12
+      // mTbHoehe
       // 
-      this.materialTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.materialTextBox12.Depth = 0;
-      this.materialTextBox12.Font = new System.Drawing.Font("Roboto", 12F);
-      this.materialTextBox12.Location = new System.Drawing.Point(32, 156);
-      this.materialTextBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.materialTextBox12.MaxLength = 50;
-      this.materialTextBox12.MouseState = MaterialSkin.MouseState.OUT;
-      this.materialTextBox12.Multiline = false;
-      this.materialTextBox12.Name = "materialTextBox12";
-      this.materialTextBox12.Size = new System.Drawing.Size(252, 50);
-      this.materialTextBox12.TabIndex = 6;
-      this.materialTextBox12.Text = "";
+      this.mTbHoehe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mTbHoehe.Depth = 0;
+      this.mTbHoehe.Font = new System.Drawing.Font("Roboto", 12F);
+      this.mTbHoehe.Location = new System.Drawing.Point(32, 156);
+      this.mTbHoehe.Margin = new System.Windows.Forms.Padding(4);
+      this.mTbHoehe.MaxLength = 50;
+      this.mTbHoehe.MouseState = MaterialSkin.MouseState.OUT;
+      this.mTbHoehe.Multiline = false;
+      this.mTbHoehe.Name = "mTbHoehe";
+      this.mTbHoehe.Size = new System.Drawing.Size(252, 50);
+      this.mTbHoehe.TabIndex = 6;
+      this.mTbHoehe.Text = "";
       // 
       // StartgeldTextBox
       // 
@@ -592,7 +592,7 @@ namespace Mountainbike_Event
       this.StartgeldTextBox.Depth = 0;
       this.StartgeldTextBox.Font = new System.Drawing.Font("Roboto", 12F);
       this.StartgeldTextBox.Location = new System.Drawing.Point(32, 87);
-      this.StartgeldTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.StartgeldTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.StartgeldTextBox.MaxLength = 50;
       this.StartgeldTextBox.MouseState = MaterialSkin.MouseState.OUT;
       this.StartgeldTextBox.Multiline = false;
@@ -601,20 +601,20 @@ namespace Mountainbike_Event
       this.StartgeldTextBox.TabIndex = 5;
       this.StartgeldTextBox.Text = "";
       // 
-      // materialTextBox14
+      // mTBStreckeName
       // 
-      this.materialTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.materialTextBox14.Depth = 0;
-      this.materialTextBox14.Font = new System.Drawing.Font("Roboto", 12F);
-      this.materialTextBox14.Location = new System.Drawing.Point(32, 18);
-      this.materialTextBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.materialTextBox14.MaxLength = 50;
-      this.materialTextBox14.MouseState = MaterialSkin.MouseState.OUT;
-      this.materialTextBox14.Multiline = false;
-      this.materialTextBox14.Name = "materialTextBox14";
-      this.materialTextBox14.Size = new System.Drawing.Size(252, 50);
-      this.materialTextBox14.TabIndex = 0;
-      this.materialTextBox14.Text = "";
+      this.mTBStreckeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mTBStreckeName.Depth = 0;
+      this.mTBStreckeName.Font = new System.Drawing.Font("Roboto", 12F);
+      this.mTBStreckeName.Location = new System.Drawing.Point(32, 18);
+      this.mTBStreckeName.Margin = new System.Windows.Forms.Padding(4);
+      this.mTBStreckeName.MaxLength = 50;
+      this.mTBStreckeName.MouseState = MaterialSkin.MouseState.OUT;
+      this.mTBStreckeName.Multiline = false;
+      this.mTBStreckeName.Name = "mTBStreckeName";
+      this.mTBStreckeName.Size = new System.Drawing.Size(252, 50);
+      this.mTBStreckeName.TabIndex = 0;
+      this.mTBStreckeName.Text = "";
       // 
       // FahrerTab
       // 
@@ -628,9 +628,9 @@ namespace Mountainbike_Event
       this.FahrerTab.Controls.Add(this.materialLabel31);
       this.FahrerTab.Controls.Add(this.materialLabel32);
       this.FahrerTab.Location = new System.Drawing.Point(4, 25);
-      this.FahrerTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.FahrerTab.Margin = new System.Windows.Forms.Padding(4);
       this.FahrerTab.Name = "FahrerTab";
-      this.FahrerTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.FahrerTab.Padding = new System.Windows.Forms.Padding(4);
       this.FahrerTab.Size = new System.Drawing.Size(619, 577);
       this.FahrerTab.TabIndex = 3;
       this.FahrerTab.Text = "Fahrer";
@@ -659,7 +659,7 @@ namespace Mountainbike_Event
       // dateTimePicker2
       // 
       this.dateTimePicker2.Location = new System.Drawing.Point(7, 155);
-      this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
       this.dateTimePicker2.Name = "dateTimePicker2";
       this.dateTimePicker2.Size = new System.Drawing.Size(265, 22);
       this.dateTimePicker2.TabIndex = 13;
@@ -679,7 +679,7 @@ namespace Mountainbike_Event
       this.materialComboBox3.IntegralHeight = false;
       this.materialComboBox3.ItemHeight = 43;
       this.materialComboBox3.Location = new System.Drawing.Point(72, 473);
-      this.materialComboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialComboBox3.Margin = new System.Windows.Forms.Padding(4);
       this.materialComboBox3.MaxDropDownItems = 4;
       this.materialComboBox3.MouseState = MaterialSkin.MouseState.OUT;
       this.materialComboBox3.Name = "materialComboBox3";
@@ -693,7 +693,7 @@ namespace Mountainbike_Event
       this.materialTextBox15.Depth = 0;
       this.materialTextBox15.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBox15.Location = new System.Drawing.Point(72, 391);
-      this.materialTextBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBox15.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBox15.MaxLength = 50;
       this.materialTextBox15.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBox15.Multiline = false;
@@ -708,7 +708,7 @@ namespace Mountainbike_Event
       this.materialTextBox16.Depth = 0;
       this.materialTextBox16.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBox16.Location = new System.Drawing.Point(72, 266);
-      this.materialTextBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBox16.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBox16.MaxLength = 50;
       this.materialTextBox16.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBox16.Multiline = false;
@@ -723,7 +723,7 @@ namespace Mountainbike_Event
       this.PLZTextBox_Fahrer.Depth = 0;
       this.PLZTextBox_Fahrer.Font = new System.Drawing.Font("Roboto", 12F);
       this.PLZTextBox_Fahrer.Location = new System.Drawing.Point(72, 202);
-      this.PLZTextBox_Fahrer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.PLZTextBox_Fahrer.Margin = new System.Windows.Forms.Padding(4);
       this.PLZTextBox_Fahrer.MaxLength = 50;
       this.PLZTextBox_Fahrer.MouseState = MaterialSkin.MouseState.OUT;
       this.PLZTextBox_Fahrer.Multiline = false;
@@ -738,7 +738,7 @@ namespace Mountainbike_Event
       this.materialTextBox19.Depth = 0;
       this.materialTextBox19.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBox19.Location = new System.Drawing.Point(72, 86);
-      this.materialTextBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBox19.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBox19.MaxLength = 50;
       this.materialTextBox19.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBox19.Multiline = false;
@@ -753,7 +753,7 @@ namespace Mountainbike_Event
       this.materialTextBox20.Depth = 0;
       this.materialTextBox20.Font = new System.Drawing.Font("Roboto", 12F);
       this.materialTextBox20.Location = new System.Drawing.Point(72, 17);
-      this.materialTextBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialTextBox20.Margin = new System.Windows.Forms.Padding(4);
       this.materialTextBox20.MaxLength = 50;
       this.materialTextBox20.MouseState = MaterialSkin.MouseState.OUT;
       this.materialTextBox20.Multiline = false;
@@ -935,7 +935,7 @@ namespace Mountainbike_Event
       this.materialListView1.FullRowSelect = true;
       this.materialListView1.HideSelection = false;
       this.materialListView1.Location = new System.Drawing.Point(19, 17);
-      this.materialListView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.materialListView1.Margin = new System.Windows.Forms.Padding(4);
       this.materialListView1.MinimumSize = new System.Drawing.Size(267, 123);
       this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
       this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -995,7 +995,7 @@ namespace Mountainbike_Event
       this.Controls.Add(this.materialCard1);
       this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.Name = "Form1";
-      this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Padding = new System.Windows.Forms.Padding(4);
       this.Text = "Datenbank-Client";
       this.materialCard1.ResumeLayout(false);
       this.materialCard1.PerformLayout();
@@ -1050,18 +1050,18 @@ namespace Mountainbike_Event
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
+        private MaterialSkin.Controls.MaterialTextBox mTBWettkmapfName;
         private MaterialSkin.Controls.MaterialCard controlCardTextBoxWettkampf;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
+        private MaterialSkin.Controls.MaterialComboBox mCbStrecke;
         private System.Windows.Forms.TabPage StreckeTab;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox11;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox12;
+        private MaterialSkin.Controls.MaterialTextBox mtbDistanz;
+        private MaterialSkin.Controls.MaterialTextBox mTbHoehe;
         private MaterialSkin.Controls.MaterialTextBox StartgeldTextBox;
         private MaterialSkin.Controls.MaterialLabel materialLabel21;
         private MaterialSkin.Controls.MaterialLabel materialLabel22;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox14;
+        private MaterialSkin.Controls.MaterialTextBox mTBStreckeName;
         private System.Windows.Forms.TabPage FahrerTab;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
@@ -1081,7 +1081,7 @@ namespace Mountainbike_Event
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialCard controlCardTextBoxStrecke;
         private MaterialSkin.Controls.MaterialCard controlCardTextBoxFahrer;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dTPWettkampfDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

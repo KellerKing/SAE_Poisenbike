@@ -75,7 +75,7 @@
     <Compile Include="Buisnesslogic.cs" />
     <Compile Include="DataAcces\Commands.cs" />
     <Compile Include="DataAcces\DatabaseConnector.cs" />
-    <Compile Include="Factory.cs" />
+    <Compile Include="ModelFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +89,7 @@
     <Compile Include="Pruefungen\PruefFactory.cs" />
     <Compile Include="Pruefungen\TeamPruefungen.cs" />
     <Compile Include="Pruefungen\WettkmapfPruefungen.cs" />
+    <Compile Include="ViewModelCreator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
