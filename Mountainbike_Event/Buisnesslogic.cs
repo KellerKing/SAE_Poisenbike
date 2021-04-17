@@ -1,5 +1,6 @@
 ﻿using Service.DatabaseConnection;
 using Service.DatabaseConnection.Models;
+using Super_duper_ding.DataAcces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,16 @@ namespace Super_duper_ding
     public static int CreateTeam(TeamModel team, IDatabaseConnector db)
     {
       return db.AddTeamToDatabaseAsync(team).Result;
+    }
+
+    public static int CreateStrecke(StreckenModel strecke, IDatabaseConnector db)
+    {
+      return db.CreateStrecke(strecke).Result;
+    }
+
+    internal static int CreateWettkampf(WettkampfModel wettkmapf, IDatabaseConnector databaseConnector)
+    {
+      return databaseConnector.CreateWettkampf(wettkmapf);
     }
   }
 }
