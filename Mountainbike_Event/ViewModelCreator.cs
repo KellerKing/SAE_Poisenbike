@@ -21,9 +21,9 @@ namespace Mountainbike_Event
     }
     //TODO: Kann zusammengefasst werden !
 
-    public static MaterialComboBox CreateTeamsCbItems(IDatabaseConnector db, MaterialComboBox cb, string displayAttr, string valueAttr)
+    public static MaterialComboBox CreateComboboxItems<T>(List<T> datasource, MaterialComboBox cb, string displayAttr, string valueAttr)
     {
-      cb.DataSource = db.ZeigeAlleTeamsAsync();
+      cb.DataSource = datasource;
       cb.DisplayMember = displayAttr;
       cb.ValueMember = valueAttr;
       return cb;

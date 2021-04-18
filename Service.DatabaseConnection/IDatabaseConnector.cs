@@ -9,10 +9,10 @@ namespace Service.DatabaseConnection
 {
   public interface IDatabaseConnector
   {
-    Task<List<FahrerModel>> ZeigeAlleFahrerAsync();
-    Task<int> AddFahrerToDatabaseAsync(FahrerModel fahrer);
+    List<FahrerModel> ZeigeAlleFahrer();
+    int AddFahrerToDatabase(FahrerModel fahrer);
 
-    Task<List<TeamModel>> ZeigeAlleTeamsAsync();
+    List<TeamModel> ZeigeAlleTeams();
     Task<int> AddTeamToDatabaseAsync(TeamModel team);
 
     Task<List<FahrerModel>> GetFahrerImTeam(TeamModel team); //Doch lieber mit linq in der Logik ?
@@ -26,7 +26,9 @@ namespace Service.DatabaseConnection
 
     Task<int> InsertErreichteZeit(BestenlisteModel bestenliste);
 
-    Task<List<BestenlisteModel>> GetBestenlisteProWettkmapf(WettkampfModel wettkampf);
+    List<BestenlisteModel> GetBestenlisteProWettkmapf(WettkampfModel wettkampf);
+
+    int TrageFahrerInWettkampfEin(BestenlisteModel bestenliste);
 
   }
 }

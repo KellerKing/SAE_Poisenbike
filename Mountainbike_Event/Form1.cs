@@ -40,7 +40,10 @@ namespace Mountainbike_Event
     private void InitComboboxen()
     {
       mCbStrecke = ViewModelCreator.CreateStreckenCbItems(new DatabaseConnector(), mCbStrecke);
-      mCBTeam = ViewModelCreator.CreateTeamsCbItems(new DatabaseConnector(), mCBTeam, "Teamname", "TeamID");
+      mCBTeam = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleTeams(), mCBTeam, "Teamname", "TeamID");
+      mCBWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkampf, "Name", "WettkampfID");
+      mCBWettkmapfZuFahrer = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkmapfZuFahrer, "Name", "WettkampfID");
+      mCBFahrerZuWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleFahrer(), mCBFahrerZuWettkampf, "Fullname", "FahrerID");
     }
 
 
@@ -97,8 +100,8 @@ namespace Mountainbike_Event
 
     private bool eingabeValidierungFahrer()
     {
-      
-      if (dateTimePicker2.Value < DateTime.Today)
+
+      if (dTPDat.Value < DateTime.Today)
       {
         MessageBox.Show("Bitte geben Sie ein gültiges Datum ein !");
         return false;
@@ -120,8 +123,8 @@ namespace Mountainbike_Event
     {
       var team = ModelFactory.CreateTeamModel(E_MailTextBox.Text, HausnummerTextBox.Text, materialTextBoxOrt.Text, PLZTextBoxTeam.Text, materialTextBoxStr.Text, null, materialTextBoxTeamname.Text);
       var pruefergebnisse = PruefFactory.GetPruefergebnisTeam(team, new DatabaseConnector());
-      
-      if(pruefergebnisse.Any(x=> x.IsValid == false))
+
+      if (pruefergebnisse.Any(x => x.IsValid == false))
       {
         MessageBox.Show(pruefergebnisse.Where(x => x.IsValid == false).FirstOrDefault().Fehlertext);
         return;
@@ -138,7 +141,7 @@ namespace Mountainbike_Event
       var distanz = (float)Convert.ToDouble(mtbDistanz.Text);
       var name = mTBStreckeName.Text;
 
-      var strecke = ModelFactory.CreateStreckenModel( dist: distanz, hm: hm, money: geld, n: name);
+      var strecke = ModelFactory.CreateStreckenModel(dist: distanz, hm: hm, money: geld, n: name);
 
       Buisnesslogic.CreateStrecke(strecke, new DatabaseConnector());
 
@@ -149,7 +152,7 @@ namespace Mountainbike_Event
       var name = mTBWettkmapfName.Text;
       var time = dTPWettkampfDate.Value;
       var streckenID = (int)mCbStrecke.SelectedValue;
-      var wettkmapf = ModelFactory.CreateWettkampfModel(time, name, streckenID, null);
+      var wettkmapf = ModelFactory.CreateWettkampfModel(time.ToString(), name, streckenID, null);
 
       var pruefergebnisse = PruefFactory.GetPruefergebnisWettkampf(wettkmapf, new DatabaseConnector());
 
@@ -161,20 +164,51 @@ namespace Mountainbike_Event
       Buisnesslogic.CreateWettkampf(wettkmapf, new DatabaseConnector());
     }
 
+    private void createFahrer()
+    {
+      var nName = mTBNname.Text;
+      var vName = mTbVName.Text;
+      var dat = dTPDat.Value;
+      var plz = PLZTextBox_Fahrer.Text;
+      var ort = mTBOrtFahrer.Text;
+      var str = mTBStrFahrer.Text;
+      var hsnr = HausnummerTextBoxFahrer.Text;
+      var tID = (int)mCBTeam.SelectedValue;
+
+      var fahrer = ModelFactory.CreateFahrerModel(dat.ToString(), str, tID, vName, null, hsnr, nName, ort, plz);
+      var pruefergebnisse = PruefFactory.GetPruefergebnisFahrer(fahrer, new DatabaseConnector());
+
+      if (pruefergebnisse.Any(x => x.IsValid == false))
+      {
+        MessageBox.Show(pruefergebnisse.Where(x => x.IsValid == false).FirstOrDefault().Fehlertext);
+        return;
+      }
+      Buisnesslogic.CreateFahrer(fahrer, new DatabaseConnector());
+    }
+
+    private void SchreibeFahrerImWettkmapfEin()
+    {
+      var faherID = (int)mCBFahrerZuWettkampf.SelectedValue;
+      var wettkampfID = (int)mCBWettkmapfZuFahrer.SelectedValue;
+
+      //TODO Prüfung
+      Buisnesslogic.FuegeFahrerWettkampfHinzu(ModelFactory.CreateWettkampfModel(wId: wettkampfID), ModelFactory.CreateFahrerModel(fahrerId: faherID), new DatabaseConnector());
+    }
+
 
     private void EintragPflegenBtn_Click(object sender, EventArgs e)
     {
-      
+
       //pflichtfeldvalidierung();
 
-      switch (materialTabControl1.SelectedTab.Name)
+      switch (tabControl.SelectedTab.Name)
       {
         case "TeamTab":
-          if(pflichtfeldvalidierung(controlCardTextBoxTeam) && eingabevalidierungTeam())
+          if (pflichtfeldvalidierung(controlCardTextBoxTeam) && eingabevalidierungTeam())
           {
             createTeam();
           }
-          
+
           break;
         case "WettkampfTab":
           if (pflichtfeldvalidierung(controlCardTextBoxWettkampf))
@@ -183,26 +217,39 @@ namespace Mountainbike_Event
           }
           break;
         case "StreckeTab":
-          
-          if(eingabeValidierungStrecke() && pflichtfeldvalidierung(controlCardTextBoxStrecke))
+
+          if (eingabeValidierungStrecke() && pflichtfeldvalidierung(controlCardTextBoxStrecke))
           {
             createStrecke();
           }
           break;
         case "FahrerTab":
-          pflichtfeldvalidierung(controlCardTextBoxFahrer);
-          eingabeValidierungFahrer();
+          if (pflichtfeldvalidierung(controlCardTextBoxFahrer) && eingabeValidierungFahrer())
+          {
+            createFahrer();
+          }
+          break;
+        case "mTabPageFahrerZuWettkampf":
+          SchreibeFahrerImWettkmapfEin();
           break;
         default:
           MessageBox.Show("Ups, es ist ein Fehler passiert");
           break;
 
       }
+      InitComboboxen();
 
-    
 
       // DatabaseValidierung
 
+    }
+
+    private void btnLoadBestenliste_Click(object sender, EventArgs e)
+    {
+      var wkID = (int)mCBWettkampf.SelectedValue;
+      var wk = ModelFactory.CreateWettkampfModel(wId: wkID);
+      var bestenliste = Buisnesslogic.GetBestenlisteFuerWettkampf(wk, new DatabaseConnector());
+      dataGridView1.DataSource = bestenliste;
     }
   }
 }

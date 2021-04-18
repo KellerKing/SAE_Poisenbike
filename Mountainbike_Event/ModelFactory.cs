@@ -9,7 +9,7 @@ namespace Mountainbike_Event
 {
   public class ModelFactory
   {
-    public static TeamModel CreateTeamModel(string email = "", string hausnummer = "", string ort = "", string plz = "", string strasse = "", int? teamid = null, string teamname = "" )
+    public static TeamModel CreateTeamModel(string email = "", string hausnummer = "", string ort = "", string plz = "", string strasse = "", int? teamid = null, string teamname = "")
     {
       return new TeamModel
       {
@@ -22,28 +22,28 @@ namespace Mountainbike_Event
         Teamname = teamname
       };
     }
-    public static FahrerModel CreateFahrerModel(DateTime gebDat, string strasse = "", int? teamId = null, string vname = "", int? fahrerId = null, string nummer = "", string nname = "", string ort = "", string plz= "")
+    public static FahrerModel CreateFahrerModel(string gebDat = "1.1.1", string strasse = "", int? teamId = null, string vname = "", int? fahrerId = null, string nummer = "", string nname = "", string ort = "", string plz = "")
     {
       return new FahrerModel
       {
         FahrerID = fahrerId,
-        GebDat = gebDat,
+        GebDat = DateTime.Parse(gebDat),
         Hausnummer = nummer,
         NName = nname,
         Ort = ort,
-        Plz = plz, 
+        Plz = plz,
         Strasse = strasse,
         TeamID = teamId,
         VName = vname,
-      
+
       };
     }
 
-    public static WettkampfModel CreateWettkampfModel(DateTime date, string name = "", int? sId = null, int? wId = null)
+    public static WettkampfModel CreateWettkampfModel(string date = "1.1.1", string name = "", int? sId = null, int? wId = null)
     {
       return new WettkampfModel
       {
-        Datum = date,
+        Datum = DateTime.Parse(date), //TODO:
         Name = name,
         StreckenID = sId,
         WettkampfID = wId
@@ -64,15 +64,15 @@ namespace Mountainbike_Event
       };
     }
 
-    public static BestenlisteModel CreateBestenlisteModel(WettkampfModel wettkampf, FahrerModel fahrer)
+    public static BestenlisteModel CreateBestenlisteModel(WettkampfModel wettkampf, FahrerModel fahrer, int? startnummer = null)
     {
       return new BestenlisteModel
       {
-       Fahrer = fahrer,
-       FahrerID = fahrer.FahrerID,
-       Fahrer_startnummer = 0, //TODO: Hier mit Randoms oder so was arbeiten
-      wettkampf = wettkampf,
-      WettkampfID = wettkampf.WettkampfID,
+        Fahrer = fahrer,
+        FahrerID = fahrer.FahrerID,
+        Fahrer_startnummer = startnummer,
+        wettkampf = wettkampf,
+        WettkampfID = wettkampf.WettkampfID,
       };
     }
 

@@ -17,5 +17,6 @@ namespace Service.DatabaseConnection.Models
     public string Ort { get; set; }
     public DateTime GebDat { get; set; }
     public int? TeamID { get; set; }
+    public string Fullname { get => $"{NName} {VName}"; }
   }
 }

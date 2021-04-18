@@ -12,7 +12,7 @@ namespace Super_duper_ding.Pruefungen
   {
     public static Pruefergebnis CheckIfFahrerAlreadyExists(FahrerModel fahrer, IDatabaseConnector cnn)
     {
-      var isValid = cnn.ZeigeAlleFahrerAsync().Result.Where(x => x.VName == fahrer.VName && x.NName == fahrer.NName && x.Plz == fahrer.Plz && x.Strasse == fahrer.Strasse).FirstOrDefault() == null;
+      var isValid = cnn.ZeigeAlleFahrer().Where(x => x.VName == fahrer.VName && x.NName == fahrer.NName && x.Plz == fahrer.Plz && x.Strasse == fahrer.Strasse).FirstOrDefault() == null;
 
       return new Pruefergebnis
       {
@@ -23,7 +23,7 @@ namespace Super_duper_ding.Pruefungen
 
     internal static Pruefergebnis CheckIfSelectedteamExists(FahrerModel fahrer, IDatabaseConnector cnn)
     {
-      var teams = cnn.ZeigeAlleTeamsAsync().Result;
+      var teams = cnn.ZeigeAlleTeams();
      var isValid = teams.Where(x => x.TeamID == fahrer.TeamID).Count() > 0;
 
 

@@ -12,7 +12,7 @@ namespace Super_duper_ding.Pruefungen
   {
     public static Pruefergebnis CheckIfTeamAlreadyExists(string name, IDatabaseConnector cnn)
     {
-      var isValid = cnn.ZeigeAlleTeamsAsync().Result.Where(x => x.Teamname == name).FirstOrDefault() == null;
+      var isValid = cnn.ZeigeAlleTeams().Where(x => x.Teamname == name).FirstOrDefault() == null;
 
       return new Pruefergebnis
       {

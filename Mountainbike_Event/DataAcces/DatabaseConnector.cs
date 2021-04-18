@@ -20,7 +20,7 @@ namespace Super_duper_ding.DataAcces
       //_connection = mySqlConnection;
     }
 
-    public async Task<int> AddFahrerToDatabaseAsync(FahrerModel fahrer)
+    public int AddFahrerToDatabase(FahrerModel fahrer)
     {
       var procedure = Commands.procedures[(int)CommandNames.insertFahrer];
 
@@ -33,7 +33,7 @@ namespace Super_duper_ding.DataAcces
 
     }
 
-    public async Task<List<FahrerModel>> ZeigeAlleFahrerAsync()
+    public List<FahrerModel> ZeigeAlleFahrer()
     {
       var procedure = Commands.procedures[(int)CommandNames.getFahrer];
 
@@ -41,13 +41,13 @@ namespace Super_duper_ding.DataAcces
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
-        alleFahrer = (List<FahrerModel>)await clone.QueryAsync<FahrerModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        alleFahrer = (List<FahrerModel>)clone.Query<FahrerModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
 
       return alleFahrer;
     }
 
-    public async Task<List<TeamModel>> ZeigeAlleTeamsAsync()
+    public List<TeamModel> ZeigeAlleTeams()
     {
       var procedure = Commands.procedures[(int)CommandNames.getTeams];
 
@@ -55,7 +55,7 @@ namespace Super_duper_ding.DataAcces
       using (clone)
       {
         clone.Open();
-        return (List<TeamModel>)await clone.QueryAsync<TeamModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        return (List<TeamModel>)clone.Query<TeamModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
 
     }
@@ -83,7 +83,7 @@ namespace Super_duper_ding.DataAcces
       using (var clone = (MySqlConnection)_connection.Clone())
       {
         clone.Open();
-        return (List<StreckenModel>) clone.Query<StreckenModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        return (List<StreckenModel>)clone.Query<StreckenModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
 
     }
@@ -105,7 +105,7 @@ namespace Super_duper_ding.DataAcces
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
-        return (List<WettkampfModel>) clone.Query<WettkampfModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        return (List<WettkampfModel>)clone.Query<WettkampfModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
       }
     }
 
@@ -133,15 +133,33 @@ namespace Super_duper_ding.DataAcces
       }
     }
 
-    public async Task<List<BestenlisteModel>> GetBestenlisteProWettkmapf(WettkampfModel wettkampf)
+    public List<BestenlisteModel> GetBestenlisteProWettkmapf(WettkampfModel wettkampf)
     {
       var procedure = Commands.procedures[(int)CommandNames.getAlleBestenlistenProWettkampf];
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
-        return (List<BestenlisteModel>) await clone.QueryAsync<BestenlisteModel>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+        return (List<BestenlisteModel>)clone.Query<BestenlisteModel>(procedure, wettkampf, commandType: System.Data.CommandType.StoredProcedure);
       }
 
+    }
+
+    public int TrageFahrerInWettkampfEin(BestenlisteModel bestenliste)
+    {
+      var procedure = Commands.procedures[(int)CommandNames.insertWettkmapf_Fahrer];
+      using (var clone = (MySqlConnection)_connection.Clone())
+      {
+        clone.Open();
+        return clone.Execute(procedure,
+          new
+          {
+            FahrerID = bestenliste.FahrerID,
+            WettkampfID = bestenliste.WettkampfID,
+            Fahrer_Startnummer = bestenliste.Fahrer_startnummer,
+            Zeit = bestenliste.Zeit
+          }
+          , commandType: System.Data.CommandType.StoredProcedure);
+      }
     }
 
 

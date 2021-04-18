@@ -1,4 +1,5 @@
-﻿using Service.DatabaseConnection;
+﻿using Mountainbike_Event;
+using Service.DatabaseConnection;
 using Service.DatabaseConnection.Models;
 using Super_duper_ding.DataAcces;
 using System;
@@ -11,11 +12,11 @@ namespace Super_duper_ding
   {
     public static List<BestenlisteModel> GetBestenlisteFuerWettkampf(WettkampfModel wettkampf, IDatabaseConnector db)
     {
-      var bestenlisten = db.GetBestenlisteProWettkmapf(wettkampf).Result;
-      var fahrer = db.ZeigeAlleFahrerAsync();
+      var bestenlisten = db.GetBestenlisteProWettkmapf(wettkampf);
+      var fahrer = db.ZeigeAlleFahrer();
 
       bestenlisten.ForEach(x => {
-        x.Fahrer = fahrer.Result.Where(f => f.FahrerID == x.FahrerID).FirstOrDefault();
+        x.Fahrer = fahrer.Where(f => f.FahrerID == x.FahrerID).FirstOrDefault();
       });
 
       return bestenlisten;
@@ -23,7 +24,7 @@ namespace Super_duper_ding
 
     public static int UpdateBestzeiten(WettkampfModel wettkampfModel, FahrerModel fahrer, TimeSpan zeit,IDatabaseConnector db)
     {
-      var updatedBestzeit = db.GetBestenlisteProWettkmapf(wettkampfModel).Result.Where(x => x.FahrerID == fahrer.FahrerID).FirstOrDefault();
+      var updatedBestzeit = db.GetBestenlisteProWettkmapf(wettkampfModel).Where(x => x.FahrerID == fahrer.FahrerID).FirstOrDefault();
       //TODO: Vorher auch eigentlich prüfen !
       //Temporär daher
       //if (updatedBestzeit == 0) return updatedBestzeit;
@@ -45,6 +46,19 @@ namespace Super_duper_ding
     internal static int CreateWettkampf(WettkampfModel wettkmapf, IDatabaseConnector databaseConnector)
     {
       return databaseConnector.CreateWettkampf(wettkmapf);
+    }
+
+    public static int CreateFahrer(FahrerModel fahrer, IDatabaseConnector db)
+    {
+      return db.AddFahrerToDatabase(fahrer);
+    }
+
+    internal static int FuegeFahrerWettkampfHinzu(WettkampfModel wettkampfModel, FahrerModel fahrerModel, IDatabaseConnector db)
+    {
+      var dieBestenlisten = db.GetBestenlisteProWettkmapf(wettkampfModel);
+      var startnummer = dieBestenlisten.Max(x => x.Fahrer_startnummer) + 1 ?? 1;
+      var neuerEintrag = ModelFactory.CreateBestenlisteModel(wettkampfModel, fahrerModel, startnummer);
+      return db.TrageFahrerInWettkampfEin(neuerEintrag);
     }
   }
 }
