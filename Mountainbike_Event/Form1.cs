@@ -40,6 +40,7 @@ namespace Mountainbike_Event
     private void InitComboboxen()
     {
       mCbStrecke = ViewModelCreator.CreateStreckenCbItems(new DatabaseConnector(), mCbStrecke);
+      mCBTeam = ViewModelCreator.CreateTeamsCbItems(new DatabaseConnector(), mCBTeam, "Teamname", "TeamID");
     }
 
 

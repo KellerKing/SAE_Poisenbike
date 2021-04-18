@@ -19,6 +19,15 @@ namespace Mountainbike_Event
       cb.ValueMember = "StreckenID";
       return cb;
     }
+    //TODO: Kann zusammengefasst werden !
+
+    public static MaterialComboBox CreateTeamsCbItems(IDatabaseConnector db, MaterialComboBox cb, string displayAttr, string valueAttr)
+    {
+      cb.DataSource = db.ZeigeAlleTeamsAsync();
+      cb.DisplayMember = displayAttr;
+      cb.ValueMember = valueAttr;
+      return cb;
+    }
 
   }
 }
