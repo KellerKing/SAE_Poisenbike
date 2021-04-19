@@ -142,7 +142,7 @@ namespace Mountainbike_Event
       // 
       this.materialTabSelector1.BaseTabControl = this.tabControl;
       this.materialTabSelector1.Depth = 0;
-      this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      this.materialTabSelector1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
       this.materialTabSelector1.Location = new System.Drawing.Point(-39, 11);
       this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
       this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -192,7 +192,7 @@ namespace Mountainbike_Event
       this.HausnummerTextBoxTeam.AutoSize = true;
       this.HausnummerTextBoxTeam.Depth = 0;
       this.HausnummerTextBoxTeam.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.HausnummerTextBoxTeam.Location = new System.Drawing.Point(72, 391);
+      this.HausnummerTextBoxTeam.Location = new System.Drawing.Point(72, 413);
       this.HausnummerTextBoxTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.HausnummerTextBoxTeam.MouseState = MaterialSkin.MouseState.HOVER;
       this.HausnummerTextBoxTeam.Name = "HausnummerTextBoxTeam";
@@ -205,7 +205,7 @@ namespace Mountainbike_Event
       this.materialLabel13.AutoSize = true;
       this.materialLabel13.Depth = 0;
       this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel13.Location = new System.Drawing.Point(72, 321);
+      this.materialLabel13.Location = new System.Drawing.Point(72, 333);
       this.materialLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel13.Name = "materialLabel13";
@@ -218,7 +218,7 @@ namespace Mountainbike_Event
       this.materialLabel14.AutoSize = true;
       this.materialLabel14.Depth = 0;
       this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel14.Location = new System.Drawing.Point(72, 258);
+      this.materialLabel14.Location = new System.Drawing.Point(72, 272);
       this.materialLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel14.Name = "materialLabel14";
@@ -231,7 +231,7 @@ namespace Mountainbike_Event
       this.PLZ_LabelTeam.AutoSize = true;
       this.PLZ_LabelTeam.Depth = 0;
       this.PLZ_LabelTeam.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.PLZ_LabelTeam.Location = new System.Drawing.Point(72, 187);
+      this.PLZ_LabelTeam.Location = new System.Drawing.Point(72, 183);
       this.PLZ_LabelTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.PLZ_LabelTeam.MouseState = MaterialSkin.MouseState.HOVER;
       this.PLZ_LabelTeam.Name = "PLZ_LabelTeam";
@@ -244,7 +244,7 @@ namespace Mountainbike_Event
       this.materialLabel16.AutoSize = true;
       this.materialLabel16.Depth = 0;
       this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel16.Location = new System.Drawing.Point(72, 116);
+      this.materialLabel16.Location = new System.Drawing.Point(75, 119);
       this.materialLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel16.Name = "materialLabel16";
@@ -393,7 +393,7 @@ namespace Mountainbike_Event
       this.materialLabel18.AutoSize = true;
       this.materialLabel18.Depth = 0;
       this.materialLabel18.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel18.Location = new System.Drawing.Point(73, 173);
+      this.materialLabel18.Location = new System.Drawing.Point(73, 177);
       this.materialLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel18.Name = "materialLabel18";
@@ -513,7 +513,7 @@ namespace Mountainbike_Event
       this.materialLabel21.AutoSize = true;
       this.materialLabel21.Depth = 0;
       this.materialLabel21.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel21.Location = new System.Drawing.Point(84, 267);
+      this.materialLabel21.Location = new System.Drawing.Point(84, 271);
       this.materialLabel21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel21.Name = "materialLabel21";
@@ -526,7 +526,7 @@ namespace Mountainbike_Event
       this.materialLabel22.AutoSize = true;
       this.materialLabel22.Depth = 0;
       this.materialLabel22.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel22.Location = new System.Drawing.Point(84, 206);
+      this.materialLabel22.Location = new System.Drawing.Point(84, 193);
       this.materialLabel22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel22.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel22.Name = "materialLabel22";
@@ -539,7 +539,7 @@ namespace Mountainbike_Event
       this.materialLabel23.AutoSize = true;
       this.materialLabel23.Depth = 0;
       this.materialLabel23.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel23.Location = new System.Drawing.Point(84, 144);
+      this.materialLabel23.Location = new System.Drawing.Point(84, 129);
       this.materialLabel23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel23.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel23.Name = "materialLabel23";
@@ -805,7 +805,7 @@ namespace Mountainbike_Event
       this.materialLabel25.AutoSize = true;
       this.materialLabel25.Depth = 0;
       this.materialLabel25.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel25.Location = new System.Drawing.Point(52, 500);
+      this.materialLabel25.Location = new System.Drawing.Point(61, 497);
       this.materialLabel25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel25.Name = "materialLabel25";
@@ -818,7 +818,7 @@ namespace Mountainbike_Event
       this.HausnummerTextBoxFahrer.AutoSize = true;
       this.HausnummerTextBoxFahrer.Depth = 0;
       this.HausnummerTextBoxFahrer.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.HausnummerTextBoxFahrer.Location = new System.Drawing.Point(52, 418);
+      this.HausnummerTextBoxFahrer.Location = new System.Drawing.Point(61, 404);
       this.HausnummerTextBoxFahrer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.HausnummerTextBoxFahrer.MouseState = MaterialSkin.MouseState.HOVER;
       this.HausnummerTextBoxFahrer.Name = "HausnummerTextBoxFahrer";
@@ -831,7 +831,7 @@ namespace Mountainbike_Event
       this.materialLabel27.AutoSize = true;
       this.materialLabel27.Depth = 0;
       this.materialLabel27.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel27.Location = new System.Drawing.Point(52, 342);
+      this.materialLabel27.Location = new System.Drawing.Point(61, 341);
       this.materialLabel27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel27.Name = "materialLabel27";
@@ -844,7 +844,7 @@ namespace Mountainbike_Event
       this.materialLabel28.AutoSize = true;
       this.materialLabel28.Depth = 0;
       this.materialLabel28.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel28.Location = new System.Drawing.Point(64, 271);
+      this.materialLabel28.Location = new System.Drawing.Point(64, 279);
       this.materialLabel28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel28.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel28.Name = "materialLabel28";
@@ -857,7 +857,7 @@ namespace Mountainbike_Event
       this.PLZLabel_Fahrer.AutoSize = true;
       this.PLZLabel_Fahrer.Depth = 0;
       this.PLZLabel_Fahrer.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.PLZLabel_Fahrer.Location = new System.Drawing.Point(64, 209);
+      this.PLZLabel_Fahrer.Location = new System.Drawing.Point(64, 215);
       this.PLZLabel_Fahrer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.PLZLabel_Fahrer.MouseState = MaterialSkin.MouseState.HOVER;
       this.PLZLabel_Fahrer.Name = "PLZLabel_Fahrer";
@@ -896,7 +896,7 @@ namespace Mountainbike_Event
       this.materialLabel32.AutoSize = true;
       this.materialLabel32.Depth = 0;
       this.materialLabel32.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel32.Location = new System.Drawing.Point(64, 52);
+      this.materialLabel32.Location = new System.Drawing.Point(64, 30);
       this.materialLabel32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel32.Name = "materialLabel32";
@@ -922,7 +922,7 @@ namespace Mountainbike_Event
       this.materialLabel2.AutoSize = true;
       this.materialLabel2.Depth = 0;
       this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      this.materialLabel2.Location = new System.Drawing.Point(81, 97);
+      this.materialLabel2.Location = new System.Drawing.Point(81, 101);
       this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel2.Name = "materialLabel2";
@@ -1124,7 +1124,7 @@ namespace Mountainbike_Event
       this.materialLabel1.Depth = 0;
       this.materialLabel1.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
       this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-      this.materialLabel1.Location = new System.Drawing.Point(371, 78);
+      this.materialLabel1.Location = new System.Drawing.Point(371, 83);
       this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel1.Name = "materialLabel1";
@@ -1138,13 +1138,13 @@ namespace Mountainbike_Event
       this.materialLabel4.Depth = 0;
       this.materialLabel4.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
       this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-      this.materialLabel4.Location = new System.Drawing.Point(1608, 78);
+      this.materialLabel4.Location = new System.Drawing.Point(1608, 83);
       this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialLabel4.Name = "materialLabel4";
-      this.materialLabel4.Size = new System.Drawing.Size(313, 41);
+      this.materialLabel4.Size = new System.Drawing.Size(175, 41);
       this.materialLabel4.TabIndex = 3;
-      this.materialLabel4.Text = "gucksch du de score";
+      this.materialLabel4.Text = "gucksch du";
       // 
       // materialCard3
       // 
@@ -1173,7 +1173,7 @@ namespace Mountainbike_Event
       this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
       this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridView4.Location = new System.Drawing.Point(22, 48);
+      this.dataGridView4.Location = new System.Drawing.Point(41, 34);
       this.dataGridView4.MultiSelect = false;
       this.dataGridView4.Name = "dataGridView4";
       this.dataGridView4.RowHeadersWidth = 51;
@@ -1192,9 +1192,9 @@ namespace Mountainbike_Event
       this.materialButton3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
       this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
       this.materialButton3.Name = "materialButton3";
-      this.materialButton3.Size = new System.Drawing.Size(136, 36);
+      this.materialButton3.Size = new System.Drawing.Size(167, 36);
       this.materialButton3.TabIndex = 16;
-      this.materialButton3.Text = "Team Anzeigen";
+      this.materialButton3.Text = "Tabellen anzeigen";
       this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
       this.materialButton3.UseAccentColor = false;
       this.materialButton3.UseVisualStyleBackColor = true;
