@@ -122,14 +122,17 @@ namespace Super_duper_ding.DataAcces
 
     }
 
-    public async Task<int> InsertErreichteZeit(BestenlisteModel bestenliste)
+    public int InsertErreichteZeit(BestenlisteModel bestenliste)
     {
       var procedure = Commands.procedures[(int)CommandNames.updateErreichteZeit];
 
       using (var clone = (MySqlConnection)_connection.Clone())
       {
         clone.Open();
-        return clone.Execute(procedure, bestenliste, commandType: System.Data.CommandType.StoredProcedure);
+        return clone.Execute(procedure, new {
+          WfID = bestenliste.WfID,
+          Zeit = bestenliste.Zeit
+        }, commandType: System.Data.CommandType.StoredProcedure);
       }
     }
 
@@ -159,6 +162,25 @@ namespace Super_duper_ding.DataAcces
             Zeit = bestenliste.Zeit
           }
           , commandType: System.Data.CommandType.StoredProcedure);
+      }
+    }
+
+    public List<string> GetTables()
+    {
+      var procedure = Commands.procedures[(int)CommandNames.getTables];
+      using (var clone = (MySqlConnection)_connection.Clone())
+      {
+        return (List<string>)clone.Query<string>(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+      }
+    }
+
+    public List<T> GetTableDataByName<T>(string name)
+    {
+      var procedure = Commands.procedures[(int)CommandNames.GetTableByName];
+      using (var clone = (MySqlConnection)_connection.Clone())
+      {
+        clone.Open();
+        return (List<T>)clone.Query<T>(procedure, new { _Name = name }, commandType: System.Data.CommandType.StoredProcedure);
       }
     }
 

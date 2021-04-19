@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Service.DatabaseConnection.Models;
 using Super_duper_ding;
 using Super_duper_ding.DataAcces;
 
@@ -31,9 +33,8 @@ namespace Mountainbike_Event
 
       materialSkinManager.AddFormToManage(this);
       materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-      materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey800, Primary.BlueGrey600, Accent.LightBlue100, TextShade.WHITE);
-
-
+      //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey800, Primary.BlueGrey600, Accent.LightBlue100, TextShade.WHITE);
+      materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.BlueGrey900, Primary.Blue900, Accent.LightBlue200, TextShade.WHITE);
       InitComboboxen();
     }
 
@@ -44,6 +45,7 @@ namespace Mountainbike_Event
       mCBWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkampf, "Name", "WettkampfID");
       mCBWettkmapfZuFahrer = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkmapfZuFahrer, "Name", "WettkampfID");
       mCBFahrerZuWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleFahrer(), mCBFahrerZuWettkampf, "Fullname", "FahrerID");
+      mCBTableSelector = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().GetTables(), mCBTableSelector, "", "");
     }
 
 
@@ -150,9 +152,9 @@ namespace Mountainbike_Event
     public void createWettkampf()
     {
       var name = mTBWettkmapfName.Text;
-      var time = dTPWettkampfDate.Value;
+      var date = dTPWettkampfDate.Value;
       var streckenID = (int)mCbStrecke.SelectedValue;
-      var wettkmapf = ModelFactory.CreateWettkampfModel(time.ToString(), name, streckenID, null);
+      var wettkmapf = ModelFactory.CreateWettkampfModel(date.ToString(), name, streckenID, null);
 
       var pruefergebnisse = PruefFactory.GetPruefergebnisWettkampf(wettkmapf, new DatabaseConnector());
 
@@ -250,6 +252,35 @@ namespace Mountainbike_Event
       var wk = ModelFactory.CreateWettkampfModel(wId: wkID);
       var bestenliste = Buisnesslogic.GetBestenlisteFuerWettkampf(wk, new DatabaseConnector());
       dataGridView1.DataSource = bestenliste;
+    }
+
+    private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+    {
+      var row =(BestenlisteModel)dataGridView1.CurrentRow.DataBoundItem;
+      Buisnesslogic.UpdateBestzeiten(row, new DatabaseConnector());
+    }
+
+    private void TableZeigenButton_Click(object sender, EventArgs e)
+    {
+      var tableName = (string)mCBTableSelector.SelectedValue;
+      switch (tableName)
+      {
+        
+        case "fahrer":
+          dataGridView4.DataSource = new DatabaseConnector().ZeigeAlleFahrer();
+          break;
+        case "strecke":
+          dataGridView4.DataSource = new DatabaseConnector().ZeigeAlleStrecken();
+          break;
+        case "team":
+          dataGridView4.DataSource = new DatabaseConnector().ZeigeAlleTeams();
+          break;
+        case "wettkampf":
+          dataGridView4.DataSource = new DatabaseConnector().ZeigeAlleWettkaempfe();
+          break;
+        case "wettkampf_fahrer":
+          break;
+      }
     }
   }
 }

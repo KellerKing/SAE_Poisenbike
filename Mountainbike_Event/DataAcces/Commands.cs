@@ -20,7 +20,9 @@ namespace Super_duper_ding.SQL_Commands
       "getTeams",
       "updateErreichteZeit",
       "getAlleBestenlistenProWettkampf",
-      "insertWettkmapf_Fahrer"
+      "insertWettkmapf_Fahrer",
+      "getTables",
+      "GetTableByName"
     };
   }
 
@@ -37,6 +39,8 @@ namespace Super_duper_ding.SQL_Commands
     getTeams = 7,
     updateErreichteZeit = 8,
     getAlleBestenlistenProWettkampf = 9,
-    insertWettkmapf_Fahrer = 10
+    insertWettkmapf_Fahrer = 10,
+    getTables = 11,
+    GetTableByName = 12
   }
 }

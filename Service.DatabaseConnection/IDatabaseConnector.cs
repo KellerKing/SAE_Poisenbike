@@ -24,11 +24,15 @@ namespace Service.DatabaseConnection
     int CreateWettkampf(WettkampfModel wettkampf);
 
 
-    Task<int> InsertErreichteZeit(BestenlisteModel bestenliste);
+    int InsertErreichteZeit(BestenlisteModel bestenliste);
 
     List<BestenlisteModel> GetBestenlisteProWettkmapf(WettkampfModel wettkampf);
 
     int TrageFahrerInWettkampfEin(BestenlisteModel bestenliste);
+
+    List<String> GetTables();
+
+    List<T> GetTableDataByName<T>(string name);
 
   }
 }

@@ -22,15 +22,13 @@ namespace Super_duper_ding
       return bestenlisten;
     }
 
-    public static int UpdateBestzeiten(WettkampfModel wettkampfModel, FahrerModel fahrer, TimeSpan zeit,IDatabaseConnector db)
+    public static int UpdateBestzeiten(BestenlisteModel eintrag, IDatabaseConnector db)
     {
-      var updatedBestzeit = db.GetBestenlisteProWettkmapf(wettkampfModel).Where(x => x.FahrerID == fahrer.FahrerID).FirstOrDefault();
       //TODO: Vorher auch eigentlich prüfen !
       //Temporär daher
       //if (updatedBestzeit == 0) return updatedBestzeit;
 
-      updatedBestzeit.Zeit = zeit;
-      return db.InsertErreichteZeit(updatedBestzeit).Result;
+      return db.InsertErreichteZeit(eintrag);
     }
 
     public static int CreateTeam(TeamModel team, IDatabaseConnector db)
@@ -59,6 +57,14 @@ namespace Super_duper_ding
       var startnummer = dieBestenlisten.Max(x => x.Fahrer_startnummer) + 1 ?? 1;
       var neuerEintrag = ModelFactory.CreateBestenlisteModel(wettkampfModel, fahrerModel, startnummer);
       return db.TrageFahrerInWettkampfEin(neuerEintrag);
+    }
+
+    public static List<T> GetDatabseTableData<T>(string tableName, IDatabaseConnector db) 
+    {
+
+      return db.GetTableDataByName<T>(tableName);
+
+     
     }
   }
 }
