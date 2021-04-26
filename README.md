@@ -5,6 +5,6 @@ Damit werden wir ne Super Note bekommen.
 Ums abzuschließen, Pikachu zerstöre den heiligen Gral !
 
 ## TODO Area
-- [ ] Anzeigen der Fahrer / Teams ... #prio3
-- [ ] Ausgabe der Bestenliste schöner machen #prio1
-- [ ] Fahrer zu Team anlegen prüfungen - > anlegen selbst geht #prio2
+- [x] Anzeigen der Fahrer / Teams ... #prio3
+- [x] Ausgabe der Bestenliste schöner machen #prio1
+- [x] Fahrer zu Team anlegen prüfungen - > anlegen selbst geht #prio2
