@@ -71,7 +71,7 @@ namespace Mountainbike_Event
         Fahrer = fahrer,
         FahrerID = fahrer.FahrerID,
         Fahrer_startnummer = startnummer,
-        wettkampf = wettkampf,
+        //wettkampf = wettkampf,
         WettkampfID = wettkampf.WettkampfID,
       };
     }

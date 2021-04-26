@@ -19,7 +19,7 @@ namespace Service.DatabaseConnection.Models
    
 
     public FahrerModel Fahrer { get; set; }
-    public WettkampfModel wettkampf { get; set; }
+    //public WettkampfModel wettkampf { get; set; }
 
 
 

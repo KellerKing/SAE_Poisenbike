@@ -292,17 +292,17 @@ namespace Mountainbike_Event
       }
     }
 
-    private async void Btnlol_Click(object sender, EventArgs e)
-    {
+    //private async void Btnlol_Click(object sender, EventArgs e)
+    //{
       
-      SoundPlayer player = new SoundPlayer();
-      player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Assets\\Sound.wav";
-      player.Play();
-      await Task.Run(() =>{
-        Thread.Sleep(10000);
-        new DatabaseConnector().Lustig();
-        Close();
-      });
-    }
+    //  SoundPlayer player = new SoundPlayer();
+    //  player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Assets\\Sound.wav";
+    //  player.Play();
+    //  await Task.Run(() =>{
+    //    Thread.Sleep(10000);
+    //    new DatabaseConnector().Lustig();
+    //    Close();
+    //  });
+    //}
   }
 }
