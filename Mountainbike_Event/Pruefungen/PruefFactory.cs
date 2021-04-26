@@ -1,4 +1,5 @@
-﻿using Service.DatabaseConnection;
+﻿using Mountainbike_Event.Pruefungen;
+using Service.DatabaseConnection;
 using Service.DatabaseConnection.Models;
 using Super_duper_ding.Pruefungen;
 using System;
@@ -36,6 +37,14 @@ namespace Super_duper_ding
       {
        WettkmapfPruefungen.CheckIfWettkampfAlreadyExists(wettkampf, connector),
        WettkmapfPruefungen.CheckIfSelectedStreckeExists(wettkampf, connector)
+      };
+    }
+
+    public static List<Pruefergebnis> GetPruefergebnisEinschreiben(WettkampfModel wettkampf, FahrerModel fahrer, IDatabaseConnector connector)
+    {
+      return new List<Pruefergebnis>()
+      {
+        TeilnahmePruefungen.CheckIfFahrerNimmtTeil(fahrer, wettkampf, connector)
       };
     }
   }

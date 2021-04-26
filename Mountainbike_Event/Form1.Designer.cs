@@ -142,7 +142,7 @@ namespace Mountainbike_Event
       // 
       this.materialTabSelector1.BaseTabControl = this.tabControl;
       this.materialTabSelector1.Depth = 0;
-      this.materialTabSelector1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+      this.materialTabSelector1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
       this.materialTabSelector1.Location = new System.Drawing.Point(-39, 11);
       this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
       this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;

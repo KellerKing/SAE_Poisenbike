@@ -88,6 +88,7 @@
     <Compile Include="Pruefungen\Pruefergebnis.cs" />
     <Compile Include="Pruefungen\PruefFactory.cs" />
     <Compile Include="Pruefungen\TeamPruefungen.cs" />
+    <Compile Include="Pruefungen\TeilnahmePruefungen.cs" />
     <Compile Include="Pruefungen\WettkmapfPruefungen.cs" />
     <Compile Include="ViewModelCreator.cs" />
     <EmbeddedResource Include="Form1.resx">

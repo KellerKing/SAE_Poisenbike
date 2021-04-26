@@ -45,7 +45,8 @@ namespace Mountainbike_Event
       mCBWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkampf, "Name", "WettkampfID");
       mCBWettkmapfZuFahrer = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleWettkaempfe(), mCBWettkmapfZuFahrer, "Name", "WettkampfID");
       mCBFahrerZuWettkampf = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().ZeigeAlleFahrer(), mCBFahrerZuWettkampf, "Fullname", "FahrerID");
-      mCBTableSelector = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().GetTables(), mCBTableSelector, "", "");
+      mCBTableSelector = ViewModelCreator.CreateComboboxItems(new DatabaseConnector().GetTables().Where(x => x != "wettkampf_fahrer").ToList(), mCBTableSelector, "", "");
+
     }
 
 
@@ -191,7 +192,18 @@ namespace Mountainbike_Event
     private void SchreibeFahrerImWettkmapfEin()
     {
       var faherID = (int)mCBFahrerZuWettkampf.SelectedValue;
+      var fahrerDisplay = (string)mCBFahrerZuWettkampf.SelectedText;
+
       var wettkampfID = (int)mCBWettkmapfZuFahrer.SelectedValue;
+
+
+      var pruefergebnisse = PruefFactory.GetPruefergebnisEinschreiben(new WettkampfModel { WettkampfID = wettkampfID }, new FahrerModel { FahrerID = faherID, NName = fahrerDisplay}, new DatabaseConnector());
+
+      if (pruefergebnisse.Any(x => x.IsValid == false))
+      {
+        MessageBox.Show(pruefergebnisse.Where(x => x.IsValid == false).FirstOrDefault().Fehlertext);
+        return;
+      }
 
       //TODO Prüfung
       Buisnesslogic.FuegeFahrerWettkampfHinzu(ModelFactory.CreateWettkampfModel(wId: wettkampfID), ModelFactory.CreateFahrerModel(fahrerId: faherID), new DatabaseConnector());
