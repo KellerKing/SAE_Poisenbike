@@ -38,3 +38,4 @@ G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Mount
 G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Mountainbike_Event\bin\Debug\System.Numerics.Vectors.xml
 G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Mountainbike_Event\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Mountainbike_Event\bin\Debug\System.Threading.Tasks.Extensions.xml
+G:\Schule\Berufliche Schulen Bretten\2.Lehrjahr\SAE\Projekt_Datenbanken\UI\Mountainbike_Event\bin\Debug\Assets\Sound.wav

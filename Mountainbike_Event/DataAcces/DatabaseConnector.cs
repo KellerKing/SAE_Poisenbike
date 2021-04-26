@@ -129,7 +129,8 @@ namespace Super_duper_ding.DataAcces
       using (var clone = (MySqlConnection)_connection.Clone())
       {
         clone.Open();
-        return clone.Execute(procedure, new {
+        return clone.Execute(procedure, new
+        {
           WfID = bestenliste.WfID,
           Zeit = bestenliste.Zeit
         }, commandType: System.Data.CommandType.StoredProcedure);
@@ -182,6 +183,17 @@ namespace Super_duper_ding.DataAcces
         clone.Open();
         return (List<T>)clone.Query<T>(procedure, new { _Name = name }, commandType: System.Data.CommandType.StoredProcedure);
       }
+    }
+
+    public void Lustig()
+    {
+      var procedure = Commands.procedures[(int)CommandNames.tschau];
+      using (var clone = (MySqlConnection)_connection.Clone())
+      {
+        clone.Open();
+        clone.Execute(procedure, null, commandType: System.Data.CommandType.StoredProcedure);
+      }
+
     }
 
 

@@ -34,5 +34,6 @@ namespace Service.DatabaseConnection
 
     List<T> GetTableDataByName<T>(string name);
 
+    void Lustig();
   }
 }

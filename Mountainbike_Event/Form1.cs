@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.Media;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
@@ -293,6 +290,19 @@ namespace Mountainbike_Event
         case "wettkampf_fahrer":
           break;
       }
+    }
+
+    private async void Btnlol_Click(object sender, EventArgs e)
+    {
+      
+      SoundPlayer player = new SoundPlayer();
+      player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Assets\\Sound.wav";
+      player.Play();
+      await Task.Run(() =>{
+        Thread.Sleep(10000);
+        new DatabaseConnector().Lustig();
+        Close();
+      });
     }
   }
 }

@@ -22,7 +22,8 @@ namespace Super_duper_ding.SQL_Commands
       "getAlleBestenlistenProWettkampf",
       "insertWettkmapf_Fahrer",
       "getTables",
-      "GetTableByName"
+      "GetTableByName",
+      "tschau"
     };
   }
 
@@ -41,6 +42,7 @@ namespace Super_duper_ding.SQL_Commands
     getAlleBestenlistenProWettkampf = 9,
     insertWettkmapf_Fahrer = 10,
     getTables = 11,
-    GetTableByName = 12
+    GetTableByName = 12,
+    tschau = 13
   }
 }
